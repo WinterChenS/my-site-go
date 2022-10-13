@@ -1,0 +1,16 @@
+port: 8998
+name: my-site-go
+logsPath: /tmp/logs/my-site-go
+mysql:
+  host: mysql-myaliyun
+  port: 3306
+  username: root
+  password: root
+  dbname: lu_tale_dev
+
+minio:
+  endpoint: "mysql-myaliyun:9000"
+  accessKeyID: "admin"
+  secretAccessKey: "admin"
+  bucketName: "picture"
+  path: "https://winterchen.com/share/"
