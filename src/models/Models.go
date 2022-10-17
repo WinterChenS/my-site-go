@@ -33,6 +33,7 @@ type Meta struct {
 	Description string `json:"description" gorm:"type:varchar(20);not null"`
 	Sort        int    `json:"sort" gorm:"type:int(11);not null"`
 	Parent      int    `json:"parent" gorm:"type:int(11);not null"`
+	Count       int    `json:"count" gorm:"type:int(11)"`
 }
 
 type Log struct {
