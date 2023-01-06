@@ -4,6 +4,7 @@ import (
 	"github.com/jinzhu/gorm"
 	"winterchen.com/my-site-go/src/global"
 	"winterchen.com/my-site-go/src/models"
+	"winterchen.com/my-site-go/src/requests"
 )
 
 func AddContent(content *models.Content) error {
@@ -50,4 +51,10 @@ func GetContentById(id int) (*models.Content, error) {
 	var content models.Content
 	err := global.DB.Where("id = ?", id).First(&content).Error
 	return &content, err
+}
+
+func GetCount(request *requests.ContentSearch) (int, error) {
+	var count int
+	err := global.DB.Model(&models.Content{}).Where("type = ?", request.Type).Count(&count).Error
+	return count, err
 }

@@ -7,6 +7,7 @@ import (
 	"winterchen.com/my-site-go/src/dao"
 	"winterchen.com/my-site-go/src/global"
 	"winterchen.com/my-site-go/src/models"
+	"winterchen.com/my-site-go/src/requests"
 	"winterchen.com/my-site-go/src/responses"
 )
 
@@ -54,4 +55,8 @@ func UpdateContentById(content *models.Content) error {
 
 func GetContentById(cid int) (*models.Content, error) {
 	return dao.GetContentById(cid)
+}
+
+func GetContentsByCond(request *requests.ContentSearch, pageNum int, pageSize int) (*responses.ContentResponse, error) {
+
 }
